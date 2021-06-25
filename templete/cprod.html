@@ -1,0 +1,92 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="static/v.png" alt="" width="72" height="72">
+        <h2>Cadastro de Produto</h2>
+        <p class="lead"></p>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-3"></h4>
+          <form action="" method="POST">
+          {{form8.csrf_token}}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Nome do produto</label>
+                {{form8.np(class="form-control", placeholder="Número da Nota Fiscal")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um nome válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label>Categoria</label>
+                {{form8.ct(class="form-control", placeholder="Número de Série")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um sobre nome válido.
+                </div>
+             </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label>Fornecedor</label>
+                  <div class="input-group">
+                    {{form8.forn(class="form-control", placeholder="Nome do Fornecedor")}}
+                    <div class="invalid-feedback" style="width: 100%;">
+                      Seu nickname é obrigatório.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label>Unidade<span class="text-muted"></span></label>
+                  {{form8.un(class="form-control", placeholder="Chave de Acesso")}}
+                  <div class="invalid-feedback">
+                    Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
+                  </div>
+                </div>
+            </div>
+          
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>     
+        
+    </form>
+          
+        </br>  
+        </br>
+        <div class="col-md-6 order-md-4 mb-6">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Adicionar lista de produto</span>
+          </h4>
+        </div>
+        </div>
+      </div>
+      
+        <div class="row">
+            <div class="col-md-1 mb-3"></div>
+            
+            <div class="col-md-4 col-md-offset-4"> 
+                <form action="" method="POST" enctype=multipart/form-data>
+                    <input type=file name=file>
+                    <input type=submit value=Upload>
+                </form>
+            </div>
+        </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Nome da companhia</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidade</a></li>
+          <li class="list-inline-item"><a href="#">Termos</a></li>
+          <li class="list-inline-item"><a href="#">Suporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+{% endblock %}

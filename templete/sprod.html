@@ -1,0 +1,54 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="static/v.png" alt="" width="72" height="72">
+        <h2>Cadastro de Produto</h2>
+        <p class="lead"></p>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-3"></h4>
+          <form action="" method="POST">
+          {{form10.csrf_token}}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Nome do produto</label>
+                {{form10.np(class="form-control", placeholder="Número da Nota Fiscal")}}                
+                <div class="invalid-feedback">
+                  É obrigatório inserir um nome válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label>Quantidade</label>
+                {{form10.qt(class="form-control", placeholder="Número de Série")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um sobre nome válido.
+                </div>
+             </div>
+            </div>
+          
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>     
+        
+    </form>
+          
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Nome da companhia</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidade</a></li>
+          <li class="list-inline-item"><a href="#">Termos</a></li>
+          <li class="list-inline-item"><a href="#">Suporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+{% endblock %}

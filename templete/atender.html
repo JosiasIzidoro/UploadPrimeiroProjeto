@@ -1,0 +1,25 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Solicitações</h1>
+      </div>
+
+    <form action="/estoque" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Atender Pedido de Peça</button>
+      </div>
+      </br>
+    </form>
+    
+    <form action="/sprodução" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Atender Ficha de Produção</button>
+      </div>
+      </br>
+    </form>
+
+    
+{% endblock %}

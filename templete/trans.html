@@ -1,0 +1,45 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Labels flutuantes</h1>
+        <p>Construa campos de formulário usando labels flutuantes, através do pseudo-elemento <code>:placeholder-shown</code>. <a href="https://caniuse.com/#feat=css-placeholder-shown">Funciona nas últimas versões do Chrome, Safari e Firefox.</a></p>
+      </div>
+
+    <form action="/cfunc" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar Funcionário</button>
+      </div>
+      </br>
+    </form>
+    
+    <form action="/csube" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar Sub-estoque</button>
+      </div>
+      </br>
+    </form>
+    
+    <form action="/cproduto" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar Produto</button>
+      </div>
+      </br>
+    </form>
+    
+    <form action="/fproduto" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar Ficha de Produto</button>
+      </div>
+      </br>
+    </form>
+    
+    <form action="/login" class="form-signin">
+      <div class="form-label-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </div>
+    </form>
+    
+{% endblock %}

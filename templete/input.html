@@ -1,0 +1,2139 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="static/v.png" alt="" width="72" height="72">
+        <h2>Entrada de Nota Fiscal</h2>
+        <p class="lead"></p>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-3"></h4>
+          <form action="" method="POST">
+          {{form4.csrf_token}}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Nº da NF</label>
+                {{form4.nf(class="form-control", placeholder="Número da Nota Fiscal")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um nome válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label>Serie</label>
+                {{form4.serie(class="form-control", placeholder="Número de Série")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um sobre nome válido.
+                </div>
+             </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Fornecedor</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                {{form4.forn(class="form-control", placeholder="Nome do Fornecedor")}}
+                <div class="invalid-feedback" style="width: 100%;">
+                  Seu nickname é obrigatório.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Chave de Acesso <span class="text-muted"></span></label>
+              {{form4.acesskey(class="form-control", placeholder="Chave de Acesso")}}
+              <div class="invalid-feedback">
+                Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
+              </div>
+            </div>
+            
+        <div class="col-md-6 order-md-4 mb-6">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Adicionar produto</span>
+          </h4>
+        </div>
+          
+        <div class="row mb-2">
+            <div class="col-md-6">
+              
+                <div class="card-body d-flex flex-column align-items-start">
+    
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[0]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p0(class="form-control")}}</span>
+                      </div>
+                      <div class="col-md-2">
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q0(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[1]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p1(class="form-control")}}</span>
+                      </div>
+                      <div class="col-md-2">
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q1(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[2]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p2(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q2(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[3]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p3(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q3(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[4]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p4(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q4(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[5]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p5(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q5(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[6]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p6(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q6(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[7]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p7(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q7(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[8]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p8(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q8(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[9]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p9(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q9(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[10]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p10(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q10(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[11]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p11(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q11(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[12]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p12(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q12(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[13]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p13(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q13(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[14]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p14(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q14(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[15]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p15(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q15(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[16]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p16(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q16(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[17]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p17(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q17(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[18]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p18(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q18(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[19]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p19(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q19(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[20]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p20(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q20(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[21]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p21(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q21(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[22]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p22(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q22(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[23]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p23(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q23(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[24]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p24(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q24(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[25]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p25(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q25(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[26]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p26(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q26(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[27]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p27(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q27(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[28]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p28(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q28(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[29]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p29(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q29(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[30]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p30(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q30(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[31]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p31(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q31(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[32]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p32(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q32(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[33]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p33(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q33(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[34]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p34(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q34(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[35]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p35(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q35(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[36]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p36(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q36(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[37]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p37(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q37(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[38]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p38(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q38(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[39]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p39(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q39(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[40]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p40(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q40(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[41]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p41(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q41(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[42]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p42(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q42(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[43]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p43(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q43(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[44]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p44(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q44(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[45]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p45(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q45(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[46]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p46(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q46(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[47]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p47(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q47(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[48]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p48(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q48(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[49]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p49(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q49(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[50]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p50(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q50(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[51]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p51(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q51(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[52]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p52(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q52(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[53]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p53(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q53(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[54]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p54(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q54(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[55]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p55(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q55(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[56]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p56(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q56(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[57]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p57(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q57(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[58]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p58(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q58(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[59]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p59(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q59(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[60]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p60(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q60(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[61]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p61(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q61(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[62]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p62(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q62(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[63]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p63(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q63(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[64]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p64(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q64(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[65]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p65(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q65(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[66]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p66(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q66(class="form-control")}}</span>
+                      </div>
+                     </li>
+               
+              </div>
+            </div>
+            
+            
+            <div class="col-md-6">
+                <div class="card-body d-flex flex-column align-items-start">
+                
+                    
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[67]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p67(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q67(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[68]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p68(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q68(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[69]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p69(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q69(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[70]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p70(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q70(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[71]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p71(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q71(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[72]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p72(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q72(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[73]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p73(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q73(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[74]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p74(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q74(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[75]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p75(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q75(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[76]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p76(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q76(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[77]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p77(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q77(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[78]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p78(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q78(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[79]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p79(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q79(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[80]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p80(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q80(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[81]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p81(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q81(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[82]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p82(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q82(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[83]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p83(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q83(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[84]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p84(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q84(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[85]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p85(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q85(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[86]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p86(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q86(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[87]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p87(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q87(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[88]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p88(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q88(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[89]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p89(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q89(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[90]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p90(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q90(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[91]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p91(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q91(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[92]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p92(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q92(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[93]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p93(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q93(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[94]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p94(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q94(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[95]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p95(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q95(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[96]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p96(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q96(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[97]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p97(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q97(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[98]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p98(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q98(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[99]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p99(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q99(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[100]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p100(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q100(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[101]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p101(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q101(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[102]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p102(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q102(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[103]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p103(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q103(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[104]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p104(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q104(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[105]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p105(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q105(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[106]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p106(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q106(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[107]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p107(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q107(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[108]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p108(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q108(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[109]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p109(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q109(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[110]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p110(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q110(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[111]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p111(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q111(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[112]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p112(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q112(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[113]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p113(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q113(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[114]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p114(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q114(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[115]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p115(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q115(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[116]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p116(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q116(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[117]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p117(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q117(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[118]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p118(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q118(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[119]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p119(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q119(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[120]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p120(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q120(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[121]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p121(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q121(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[122]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p122(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q122(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[123]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p123(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q123(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[124]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p124(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q124(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[125]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p125(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q125(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[126]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p126(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q126(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[127]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p127(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q127(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[128]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p128(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q128(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[129]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p129(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q129(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[130]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p130(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q130(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[131]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p131(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q131(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[132]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p132(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q132(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[133]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p133(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q133(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[134]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p134(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q134(class="form-control")}}</span>
+                      </div>
+                     </li>
+                    <ul class="list-group mb-3">
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-2">{{descr[135]}}</h6>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.p135(class="form-control")}}</span>
+                      </div>
+                      <div>
+                       <span>R$</span>
+                      </div>
+                      <div class="col-md-2">
+                        <span class="text-muted">{{form4.q135(class="form-control")}}</span>
+                      </div>
+                     </li>
+    
+              </div>
+            </div>
+          </div>
+          
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>     
+        
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Nome da companhia</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidade</a></li>
+          <li class="list-inline-item"><a href="#">Termos</a></li>
+          <li class="list-inline-item"><a href="#">Suporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+  <div class="col-md-4 col-md-offset-4">
+  <form action="" method="POST">
+      {{form2.csrf_token}}
+      <div class="form-group">
+          <label>SP</label>
+          {{form2.sp(class="form-control", placeholder="OS a atender")}}
+      </div>
+   </form>
+   </div>
+   <div class="table table-striped table-sm">
+   <form action="" method="POST">
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+   </form>
+   </div>
+
+{% endblock %}

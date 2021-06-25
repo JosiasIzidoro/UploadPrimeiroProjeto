@@ -1,0 +1,22 @@
+{% extends 'base3.html' %}
+
+{% block content %}
+  
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 col-md-offset-4">   
+  <h2>Cadastro</h2> 
+    <form action = "" method = "POST">
+        {{form11.csrf_token}}
+        <div class = "form-group">
+            <label>Numero do Sub-estoque</label>
+            {{form11.subname(class = "form-control", placeholder = "Nome do Sub-estoque")}}
+        </div>
+ 
+        <button type = "submit" class = "btn  btn-default">Submit</button>
+    
+    </form>
+</div>    
+
+{% endblock %}
+

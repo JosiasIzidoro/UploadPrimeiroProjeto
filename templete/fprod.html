@@ -1,0 +1,381 @@
+{% extends 'base4.html' %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="static/v.png" alt="" width="72" height="72">
+        <h2>Cadastro Ficha de Produto</h2>
+        <p class="lead"></p>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-3"></h4>
+          <form action="" method="POST">
+          {{form9.csrf_token}}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Nome do produto</label>
+                {{form9.np(class="form-control", placeholder="Número da Nota Fiscal")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um nome válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label>Categoria</label>
+                {{form9.ct(class="form-control", placeholder="Número de Série")}}
+                <div class="invalid-feedback">
+                  É obrigatório inserir um sobre nome válido.
+                </div>
+             </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label>Fornecedor</label>
+                  <div class="input-group">
+                    {{form9.forn(class="form-control", placeholder="Nome do Fornecedor")}}
+                    <div class="invalid-feedback" style="width: 100%;">
+                      Seu nickname é obrigatório.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label>Unidade<span class="text-muted"></span></label>
+                  {{form9.un(class="form-control", placeholder="Chave de Acesso")}}
+                  <div class="invalid-feedback">
+                    Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
+                  </div>
+                </div>
+            </div>
+            
+        <div class="col-md-6 order-md-4 mb-6">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Adicionar lista de produto</span>
+          </h4>
+        </div>
+        
+        <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <table class="table table-striped table-sm">
+                  
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[0]}} <input type="checkbox" value={{cod[0]}} name="mycheckbox">
+                      </div>
+                  </li>
+                  
+                 <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[1]}} <input type="checkbox" value={{cod[1]}} name="mycheckbox">
+                      </div>
+                 </li>
+                 
+                 <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[2]}} <input type="checkbox" value={{cod[2]}} name="mycheckbox">
+                      </div>
+                 </li>
+                 
+                 <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[3]}} <input type="checkbox" value={{cod[3]}} name="mycheckbox">
+                      </div>
+                 </li>      
+                
+                 <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[4]}} <input type="checkbox" value={{cod[4]}} name="mycheckbox">
+                      </div>
+                      
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[5]}} <input type="checkbox" value={{cod[5]}} name="mycheckbox">
+                      </div>
+                </li>
+                      
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div class="table-responsive">
+                          {{descr[6]}} <input type="checkbox" value={{cod[6]}} name="mycheckbox">
+                      </div>
+                </li>
+                
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[7]}} <input type="checkbox" value={{cod[7]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[8]}} <input type="checkbox" value={{cod[8]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[9]}} <input type="checkbox" value={{cod[9]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[10]}} <input type="checkbox" value={{cod[10]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[11]}} <input type="checkbox" value={{cod[11]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[12]}} <input type="checkbox" value={{cod[12]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[13]}} <input type="checkbox" value={{cod[13]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[14]}} <input type="checkbox" value={{cod[14]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[15]}} <input type="checkbox" value={{cod[15]}} name="mycheckbox">
+                  </div>
+                </li><li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[16]}} <input type="checkbox" value={{cod[16]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[17]}} <input type="checkbox" value={{cod[17]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[18]}} <input type="checkbox" value={{cod[18]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[19]}} <input type="checkbox" value={{cod[19]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[20]}} <input type="checkbox" value={{cod[20]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[21]}} <input type="checkbox" value={{cod[21]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[22]}} <input type="checkbox" value={{cod[22]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[23]}} <input type="checkbox" value={{cod[23]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[24]}} <input type="checkbox" value={{cod[24]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[25]}} <input type="checkbox" value={{cod[25]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[26]}} <input type="checkbox" value={{cod[26]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[27]}} <input type="checkbox" value={{cod[27]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[28]}} <input type="checkbox" value={{cod[28]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[29]}} <input type="checkbox" value={{cod[29]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[30]}} <input type="checkbox" value={{cod[30]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[31]}} <input type="checkbox" value={{cod[31]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[32]}} <input type="checkbox" value={{cod[32]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[33]}} <input type="checkbox" value={{cod[33]}} name="mycheckbox">
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div class="table-responsive">
+                      {{descr[34]}} <input type="checkbox" value={{cod[34]}} name="mycheckbox">
+                  </div>
+                </li>
+            </table>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+             
+                <table class="table table-striped table-sm">
+             
+                  <div class="table-responsive">
+                      {{descr[35]}} <input type="checkbox" value={{cod[35]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[36]}} <input type="checkbox" value={{cod[36]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[37]}} <input type="checkbox" value={{cod[37]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[38]}} <input type="checkbox" value={{cod[38]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[39]}} <input type="checkbox" value={{cod[39]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[40]}} <input type="checkbox" value={{cod[40]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[41]}} <input type="checkbox" value={{cod[41]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[42]}} <input type="checkbox" value={{cod[42]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[43]}} <input type="checkbox" value={{cod[43]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[44]}} <input type="checkbox" value={{cod[44]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[45]}} <input type="checkbox" value={{cod[45]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[46]}} <input type="checkbox" value={{cod[46]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[47]}} <input type="checkbox" value={{cod[47]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[48]}} <input type="checkbox" value={{cod[48]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[49]}} <input type="checkbox" value={{cod[49]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[50]}} <input type="checkbox" value={{cod[50]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[51]}} <input type="checkbox" value={{cod[51]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[52]}} <input type="checkbox" value={{cod[52]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[53]}} <input type="checkbox" value={{cod[53]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[54]}} <input type="checkbox" value={{cod[54]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[55]}} <input type="checkbox" value={{cod[55]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[56]}} <input type="checkbox" value={{cod[56]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[57]}} <input type="checkbox" value={{cod[57]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[58]}} <input type="checkbox" value={{cod[58]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[59]}} <input type="checkbox" value={{cod[59]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[60]}} <input type="checkbox" value={{cod[60]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[61]}} <input type="checkbox" value={{cod[61]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[62]}} <input type="checkbox" value={{cod[62]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[63]}} <input type="checkbox" value={{cod[63]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[64]}} <input type="checkbox" value={{cod[64]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[65]}} <input type="checkbox" value={{cod[65]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[66]}} <input type="checkbox" value={{cod[66]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[67]}} <input type="checkbox" value={{cod[67]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[68]}} <input type="checkbox" value={{cod[68]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[69]}} <input type="checkbox" value={{cod[69]}} name="mycheckbox">
+                  </div>
+                  <div class="table-responsive">
+                      {{descr[70]}} <input type="checkbox" value={{cod[70]}} name="mycheckbox">
+                  </div>
+             </table>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+            
+            
+          
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>     
+        
+    </form>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base3.html' %}
+
+{% block content %}
+  
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 col-md-offset-4">   
+  <h2>Cadastro</h2> 
+    <form action="" method="POST">
+        {{form7.csrf_token}}
+        <div class = "form-group">
+            <label>Usuário</label>
+            {{form7.user(class = "form-control", placeholder = "usuário")}}
+        </div>
+        <div class = "form-group">
+            <label>Password</label>
+            {{form7.password(class = "form-control")}}
+        </div>
+        <div class = "form-group">
+            <label>Nome do Usuário</label>
+            {{form7.name(class = "form-control", placeholder = "nome_do_usuário")}}
+        </div>
+        <div class = "form-group">
+            <label>Email</label>
+            {{form7.email(class = "form-control", placeholder = "email_de_cadastro")}}
+        </div>
+        <div class = "form-group">
+            <label>Função</label>
+            {{form7.func(class = "form-control", placeholder = "nome_da_função")}}
+        </div>
+        <div class = "form-group">
+            <label>Setor</label>
+            {{form7.sector(class = "form-control", placeholder = "setor")}}
+        </div>
+ 
+
+        <button type = "submit" class = "btn  btn-default">Submit</button>
+    
+    </form>
+</div>    
+
+{% endblock %}
+

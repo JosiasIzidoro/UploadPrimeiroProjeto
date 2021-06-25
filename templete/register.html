@@ -1,0 +1,35 @@
+{% extends 'base3.html' %}
+
+{% block content %}
+  
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 col-md-offset-4">   
+  <h2>Cadastro</h2> 
+    <form action = "" method = "POST">
+        {{form5.csrf_token}}
+        <div class = "form-group">
+            <label>Razão Social</label>
+            {{form5.rs(class = "form-control", placeholder = "sua_razão")}}
+        </div>
+        <div class = "form-group">
+            <label>CNPJ</label>
+            {{form5.cnpj(class = "form-control", placeholder = "seu_CNPJ")}}
+        </div>
+        <div class = "form-group">
+            <label>Name da Empresa</label>
+            {{form5.name(class = "form-control", placeholder = "nome_da_Empresa")}}
+        </div>
+        <div class = "form-group">
+            <label>Password</label>
+            {{form5.password(class = "form-control")}}
+        </div>
+ 
+
+        <button type = "submit" class = "btn  btn-default">Submit</button>
+    
+    </form>
+</div>    
+
+{% endblock %}
+
